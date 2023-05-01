@@ -1,0 +1,272 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://背景.jpg" type="Texture" id=1]
+[ext_resource path="res://Main.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://SourceHanSansCN-Regular.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = SubResource( 1 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://SourceHanSansCN-Regular.otf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 14
+font_data = SubResource( 7 )
+
+[sub_resource type="Theme" id=9]
+default_font = SubResource( 8 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://SourceHanSansCN-Regular.otf"
+
+[sub_resource type="DynamicFont" id=5]
+font_data = SubResource( 4 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=10]
+font_path = "res://SourceHanSansCN-Regular.otf"
+
+[sub_resource type="DynamicFont" id=11]
+font_data = SubResource( 10 )
+
+[sub_resource type="Theme" id=12]
+default_font = SubResource( 11 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+script = ExtResource( 2 )
+
+[node name="背景" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 240, 134 )
+texture = ExtResource( 1 )
+
+[node name="W" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="s" type="SpinBox" parent="W"]
+margin_left = 43.0
+margin_top = 19.0
+margin_right = 117.0
+margin_bottom = 43.0
+max_value = 59.0
+
+[node name="min" type="SpinBox" parent="W"]
+margin_left = 43.0
+margin_top = 53.0
+margin_right = 117.0
+margin_bottom = 77.0
+max_value = 59.0
+
+[node name="h" type="SpinBox" parent="W"]
+margin_left = 43.0
+margin_top = 87.0
+margin_right = 117.0
+margin_bottom = 111.0
+max_value = 23.0
+
+[node name="d" type="SpinBox" parent="W"]
+margin_left = 43.0
+margin_top = 122.0
+margin_right = 117.0
+margin_bottom = 146.0
+min_value = 1.0
+max_value = 31.0
+value = 1.0
+
+[node name="mon" type="SpinBox" parent="W"]
+margin_left = 43.0
+margin_top = 157.0
+margin_right = 117.0
+margin_bottom = 181.0
+min_value = 1.0
+max_value = 12.0
+value = 1.0
+
+[node name="w" type="SpinBox" parent="W"]
+margin_left = 43.0
+margin_top = 192.0
+margin_right = 117.0
+margin_bottom = 216.0
+min_value = 1.0
+max_value = 7.0
+value = 1.0
+
+[node name="y" type="SpinBox" parent="W"]
+margin_left = 43.0
+margin_top = 226.0
+margin_right = 117.0
+margin_bottom = 250.0
+max_value = 99.0
+
+[node name="T" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = SubResource( 3 )
+
+[node name="s" type="Label" parent="T"]
+margin_left = 23.0
+margin_top = 17.0
+margin_right = 41.0
+margin_bottom = 44.0
+text = "秒"
+
+[node name="min" type="Label" parent="T"]
+margin_left = 23.0
+margin_top = 51.0
+margin_right = 41.0
+margin_bottom = 78.0
+text = "分"
+
+[node name="h" type="Label" parent="T"]
+margin_left = 23.0
+margin_top = 85.0
+margin_right = 41.0
+margin_bottom = 112.0
+text = "时"
+
+[node name="d" type="Label" parent="T"]
+margin_left = 23.0
+margin_top = 120.0
+margin_right = 41.0
+margin_bottom = 147.0
+text = "日"
+
+[node name="mon" type="Label" parent="T"]
+margin_left = 23.0
+margin_top = 155.0
+margin_right = 41.0
+margin_bottom = 182.0
+text = "月"
+
+[node name="w" type="Label" parent="T"]
+margin_left = 5.0
+margin_top = 190.0
+margin_right = 41.0
+margin_bottom = 217.0
+text = "星期"
+
+[node name="y" type="Label" parent="T"]
+margin_left = 23.0
+margin_top = 224.0
+margin_right = 41.0
+margin_bottom = 251.0
+text = "年"
+
+[node name="Label" type="Label" parent="T"]
+margin_left = 223.0
+margin_top = 150.0
+margin_right = 367.0
+margin_bottom = 177.0
+text = "自动获取系统时间"
+
+[node name="COM" type="Label" parent="T"]
+margin_left = 129.0
+margin_top = 196.0
+margin_right = 201.0
+margin_bottom = 223.0
+text = "选择串口："
+
+[node name="RichTextLabel" type="RichTextLabel" parent="T"]
+margin_left = 207.0
+margin_top = 3.0
+margin_right = 623.0
+margin_bottom = 152.0
+theme = SubResource( 9 )
+text = "注意事项（更多请阅读README.txt）：
+1.自动获取系统时间仅是指本软件时间，
+不是终端设备时间。
+2.年份请输入最后两位，如2023年就输入23
+3.时间为24小时制
+4.我没有写纠错，要是输错了就自求多福吧"
+scroll_active = false
+
+[node name="B" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = SubResource( 6 )
+
+[node name="target_time_W" type="Button" parent="B"]
+margin_left = 345.0
+margin_top = 228.0
+margin_right = 469.0
+margin_bottom = 259.0
+disabled = true
+text = "写入为目标时间"
+
+[node name="now_time_W" type="Button" parent="B"]
+margin_left = 345.0
+margin_top = 188.0
+margin_right = 469.0
+margin_bottom = 218.0
+disabled = true
+text = "写入为当前时间"
+
+[node name="now_time_R" type="Button" parent="B"]
+margin_left = 226.0
+margin_top = 188.0
+margin_right = 334.0
+margin_bottom = 218.0
+disabled = true
+text = "读取设备时间"
+
+[node name="target_time_R" type="Button" parent="B"]
+margin_left = 226.0
+margin_top = 228.0
+margin_right = 334.0
+margin_bottom = 258.0
+disabled = true
+text = "读取目标时间"
+
+[node name="C" type="OptionButton" parent="B"]
+margin_left = 129.0
+margin_top = 228.0
+margin_right = 216.0
+margin_bottom = 258.0
+
+[node name="auto" type="CheckButton" parent="."]
+margin_left = 384.0
+margin_top = 145.0
+margin_right = 460.0
+margin_bottom = 185.0
+
+[node name="E" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+theme = SubResource( 12 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="E"]
+modulate = Color( 0.223529, 0.772549, 0.733333, 1 )
+margin_right = 480.0
+margin_bottom = 269.0
+text = "恭喜你找到了彩蛋！
+你点了“写入目标时间”整整39下！
+我就不见外咯
+作者Github：Anslate
+工作室B站：Colcactus（uid：473292188）
+
+
+作者：Anslate
+本作品采用知识共享署名-非商业性使用 4.0 国际许可协议进行许可
+我爱MIKU!"
+
+[connection signal="pressed" from="B/target_time_W" to="." method="_on_target_time_W_pressed"]
+[connection signal="pressed" from="B/now_time_W" to="." method="_on_now_time_W_pressed"]
+[connection signal="pressed" from="B/now_time_R" to="." method="_on_now_time_R_pressed"]
+[connection signal="pressed" from="B/target_time_R" to="." method="_on_target_time_R_pressed"]
+[connection signal="item_selected" from="B/C" to="." method="_on_C_item_selected"]
+[connection signal="pressed" from="B/C" to="." method="_on_C_pressed"]
+[connection signal="toggled" from="auto" to="." method="_on_auto_toggled"]
